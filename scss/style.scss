@@ -1,0 +1,156 @@
+$backgroundColor-base: #ccc;
+$dark-green: #0da817;
+$light-green: #2fd85f;
+$gray: #111;
+$aqua: #49aa76;
+
+$fontSize-base: calc(6px + 1.25vw);
+
+$default-shadow: 1px 1px 5px 2px darken($backgroundColor-base, 35%);
+
+$default-border: 1px solid darken($backgroundColor-base, 40%);
+
+html {
+   font: $fontSize-base/1.5 'Arial', san-serif;
+}
+
+body {
+   background-color: $backgroundColor-base;
+   margin: 10px 0;
+}
+
+.colorScheme {
+  background-color: lighten($gray, 10%);
+  border: $default-border;
+  box-shadow: $default-shadow;
+  color: $light-green;
+  border-top: none;
+}
+
+.l-2-col {
+   display: flex;
+   margin: 0 15px;
+   
+}
+
+.header {
+  background-color: $gray;
+  color: $dark-green;
+  border: $default-border;
+  box-shadow: $default-shadow;
+  text-align: center;
+  position: relative;
+  font-weight: 800;
+   i {
+      width: 30px;
+      color: $dark-green;
+   }
+   .fa-compress-arrows-alt,
+   .fa-arrows-alt {     
+      position: absolute;
+      right: 2vw;
+      top: 1vh;
+   }
+   .fa-compress-arrows-alt,
+   .fa-arrows-alt:hover {
+      color: lighten($dark-green, 20%);
+      cursor: pointer;
+   }
+}
+
+.editorWrap {
+   flex: 1.5;
+   margin: 10px;
+   textarea {
+      @extend .colorScheme;
+      margin: 0;
+      width: 99%;
+      min-height: 60vh;
+      margin-bottom: -5px;
+      resize: vertical;
+      font-size: .85rem;
+      outline: none;
+   }
+   .header {
+      font-size: 1.5rem;
+      width: 100%;
+   }
+}
+
+.previewWrap {
+   flex: 2.25;
+  @extend .colorScheme;
+  width: 80%;
+  margin: 10px;
+  min-height: 200px;
+  overflow-wrap: break-word;
+   font-size: .85rem;
+   .header {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  #preview {
+    margin: -10px 10px 0 10px;
+    width: 100%;
+    min-height: 60vh;
+  }
+}
+ 
+.maximized {
+  width: 98%;
+  min-height: 100vh;
+  margin: auto;
+  textarea {
+    min-height: 95vh;
+    resize: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+#preview {
+   blockquote {
+    border-left: 3px solid darken($aqua, 25%);
+    color: $aqua;
+    padding-left: 5px;
+    margin-left: 25px;
+  }
+
+  code {
+    background: white;
+    padding: 1px 4px 2px 4px;
+    font-size: .75rem;
+    font-weight: bold;
+    color: black;
+  }
+
+  pre {
+    background: white;
+    padding: 5px 0 5px 5px;
+    color: black;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td,
+  th {
+    border: 2px solid $dark-green;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+   .l-2-col {
+      display: block;
+   }
+   .editorWrap,
+   .previewWrap {
+      width: 640px;
+      min-height: 400px;
+   }
+}

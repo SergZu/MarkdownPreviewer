@@ -1,0 +1,136 @@
+html {
+  font: calc(6px + 1.25vw)/1.5 "Arial", san-serif;
+}
+
+body {
+  background-color: #ccc;
+  margin: 10px 0;
+}
+
+.colorScheme, .editorWrap textarea, .previewWrap {
+  background-color: #2b2b2b;
+  border: 1px solid #666666;
+  box-shadow: 1px 1px 5px 2px #737373;
+  color: #2fd85f;
+  border-top: none;
+}
+
+.l-2-col {
+  display: flex;
+  margin: 0 15px;
+}
+
+.header {
+  background-color: #111;
+  color: #0da817;
+  border: 1px solid #666666;
+  box-shadow: 1px 1px 5px 2px #737373;
+  text-align: center;
+  position: relative;
+  font-weight: 800;
+}
+.header i {
+  width: 30px;
+  color: #0da817;
+}
+.header .fa-compress-arrows-alt,
+.header .fa-arrows-alt {
+  position: absolute;
+  right: 2vw;
+  top: 1vh;
+}
+.header .fa-compress-arrows-alt,
+.header .fa-arrows-alt:hover {
+  color: #2cef39;
+  cursor: pointer;
+}
+
+.editorWrap {
+  flex: 1.5;
+  margin: 10px;
+}
+.editorWrap textarea {
+  margin: 0;
+  width: 99%;
+  min-height: 60vh;
+  margin-bottom: -5px;
+  resize: vertical;
+  font-size: .85rem;
+  outline: none;
+}
+.editorWrap .header {
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.previewWrap {
+  flex: 2.25;
+  width: 80%;
+  margin: 10px;
+  min-height: 200px;
+  overflow-wrap: break-word;
+  font-size: .85rem;
+}
+.previewWrap .header {
+  width: 100%;
+  font-size: 1.5rem;
+}
+.previewWrap #preview {
+  margin: -10px 10px 0 10px;
+  width: 100%;
+  min-height: 60vh;
+}
+
+.maximized {
+  width: 98%;
+  min-height: 100vh;
+  margin: auto;
+}
+.maximized textarea {
+  min-height: 95vh;
+  resize: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#preview blockquote {
+  border-left: 3px solid #235138;
+  color: #49aa76;
+  padding-left: 5px;
+  margin-left: 25px;
+}
+#preview code {
+  background: white;
+  padding: 1px 4px 2px 4px;
+  font-size: .75rem;
+  font-weight: bold;
+  color: black;
+}
+#preview pre {
+  background: white;
+  padding: 5px 0 5px 5px;
+  color: black;
+}
+#preview table {
+  border-collapse: collapse;
+}
+#preview td,
+#preview th {
+  border: 2px solid #0da817;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .l-2-col {
+    display: block;
+  }
+
+  .editorWrap,
+  .previewWrap {
+    width: 640px;
+    min-height: 400px;
+  }
+}
